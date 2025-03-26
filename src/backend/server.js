@@ -6,6 +6,10 @@ const webpush = require('web-push');
 const keys = require('../../src/keys.json');
 const path = require('path');
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 
 const app = express();
 //const PORT = 5000;
