@@ -1,14 +1,16 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
-import cors from 'cors';
-import webpush from 'web-push';
-import keys from '../../src/keys.json' assert { type: 'json' };
-import path from 'path';
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const webpush = require('web-push');
+const keys = require('../../src/keys.json');
+const path = require('path');
+
 
 const app = express();
 //const PORT = 5000;
 const PORT = process.env.PORT || 5000;
+
 
 // Middleware
 app.use(bodyParser.json());
