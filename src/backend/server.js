@@ -6,7 +6,9 @@ const webpush = require('web-push');
 const keys = require('../../src/keys.json');
 
 const app = express();
-const PORT = 5000;
+//const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+
 
 // Middleware
 app.use(bodyParser.json());
@@ -77,7 +79,9 @@ app.post('/save-subscription', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+//app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
+
 
 webpush.setVapidDetails(
   'mailto:prueba@gmail.com',
