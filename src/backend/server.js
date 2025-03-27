@@ -5,12 +5,14 @@ const cors = require('cors');
 const webpush = require('web-push');
 const keys = require('../../src/keys.json');
 const path = require('path');
-
+const favicon = require('serve-favicon');
 
 const app = express();
 //const PORT = 5000;
 const PORT = process.env.PORT || 5000;
 
+// Servir favicon.ico
+app.use(favicon(path.join(__dirname, 'build/favicon.ico')));
 
 // Middleware
 app.use(bodyParser.json());
